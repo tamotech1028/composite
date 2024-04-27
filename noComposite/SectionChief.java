@@ -1,6 +1,7 @@
 package noComposite;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 // 係長
 public class SectionChief {
@@ -11,16 +12,20 @@ public class SectionChief {
     private List<Employee> member;
 
 
-    public SectionChief(String name, int salary, int executiveCompensation, List<Employee> member) {
+    public SectionChief(String name, int salary, int executiveCompensation) {
         this.name = name;
         this.salary = salary;
         this.executiveCompensation = executiveCompensation;
-        this.member = member;
+        this.member = new ArrayList<>();
+    }
+
+    public void addMember(Employee employee) {
+        member.add(employee);
     }
 
     private void showEmployeeInfo() {
         System.out.println(
-            "役職：係長、氏名：" + this.name
+            "       役職：係長、氏名：" + this.name
             + "、給料：" + this.salary
             + "、役員報酬：" + this.executiveCompensation
         );

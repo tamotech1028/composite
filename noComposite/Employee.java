@@ -11,7 +11,6 @@ public class Employee {
     }
 
     public void showEmployeeInfo() {
-        System.out.println("役職：なし、氏名：" + this.name + "、給料：" + this.salary);
+        System.out.println("            役職：なし、氏名：" + this.name + "、給料：" + this.salary);
     }
-
 }

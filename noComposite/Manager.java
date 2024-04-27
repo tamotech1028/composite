@@ -1,5 +1,6 @@
 package noComposite;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 // 部長
@@ -10,16 +11,20 @@ public class Manager {
     private int executiveCompensation;
     private List<Object> subordinate;
 
-    public Manager(String name, int salary, int executiveCompensation, List<Object> subordinate) {
+    public Manager(String name, int salary, int executiveCompensation) {
         this.name = name;
         this.salary = salary;
         this.executiveCompensation = executiveCompensation;
-        this.subordinate = subordinate;
+        this.subordinate = new ArrayList<>();
+    }
+
+    public void addSubordinate(Object object) {
+        subordinate.add(object);
     }
 
     private void showEmployeeInfo() {
         System.out.println(
-            "役職：部長、氏名：" + this.name
+            "   役職：部長、氏名：" + this.name
             + "、給料：" + this.salary
             + "、役員報酬：" + this.executiveCompensation
         );
