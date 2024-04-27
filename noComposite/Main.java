@@ -45,6 +45,6 @@ public class Main {
         sectionChief4.addMember(employee8);
         sectionChief4.addMember(employee9);
 
-        president.showEmployeeListInfo();
+        president.showEmployeeInfo();;
     }
 }

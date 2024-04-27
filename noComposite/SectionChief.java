@@ -23,16 +23,12 @@ public class SectionChief {
         member.add(employee);
     }
 
-    private void showEmployeeInfo() {
+    public void showEmployeeInfo() {
         System.out.println(
             "       役職：係長、氏名：" + this.name
             + "、給料：" + this.salary
             + "、役員報酬：" + this.executiveCompensation
         );
-    }
-
-    public void showEmployeeListInfo() {
-        showEmployeeInfo();
         Iterator<Employee> iterator = this.member.iterator();
         while (iterator.hasNext()) {
             Employee employee = iterator.next();

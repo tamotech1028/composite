@@ -22,23 +22,19 @@ public class President {
         subordinate.add(object);
     }
 
-    private void showEmployeeInfo() {
+    public void showEmployeeInfo() {
         System.out.println(
             "役職：社長、氏名：" + this.name
             + "、給料：" + this.salary
             + "、役員報酬：" + this.executiveCompensation
         );
-    }
-
-    public void showEmployeeListInfo() {
-        showEmployeeInfo();
         Iterator<Object> iterator = this.subordinate.iterator();
         while (iterator.hasNext()) {
             Object obj = iterator.next();
             if (obj instanceof Manager manager) {
-                manager.showEmployeeListInfo();
+                manager.showEmployeeInfo();;
             } else if (obj instanceof SectionChief sectionChief) {
-                sectionChief.showEmployeeListInfo();
+                sectionChief.showEmployeeInfo();;
             } else if (obj instanceof Employee employee) {
                 employee.showEmployeeInfo();
             } else {
@@ -46,4 +42,6 @@ public class President {
             }
         }
     }
+
+
 }
