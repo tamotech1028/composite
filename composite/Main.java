@@ -45,6 +45,6 @@ public class Main {
         sectionChief4.addSubordinate(employee8);
         sectionChief4.addSubordinate(employee9);
 
-        president.showEmployeeInfo();
+        System.out.println(president.getEmployeeInfo());
     }
 }

@@ -9,30 +9,30 @@ public class SectionChief {
     private String name;
     private int salary;
     private int executiveCompensation;
-    private List<Employee> member;
+    private List<Employee> subordinate;
 
 
     public SectionChief(String name, int salary, int executiveCompensation) {
         this.name = name;
         this.salary = salary;
         this.executiveCompensation = executiveCompensation;
-        this.member = new ArrayList<>();
+        this.subordinate = new ArrayList<>();
     }
 
-    public void addMember(Employee employee) {
-        member.add(employee);
+    public void addSubordinate(Employee employee) {
+        subordinate.add(employee);
     }
 
-    public void showEmployeeInfo() {
-        System.out.println(
-            "       役職：係長、氏名：" + this.name
-            + "、給料：" + this.salary
-            + "、役員報酬：" + this.executiveCompensation
-        );
-        Iterator<Employee> iterator = this.member.iterator();
+    public String getEmployeeInfo() {
+        StringBuilder builder = new StringBuilder();
+        String sectionChiefInfo = "役職：係長、氏名：" + this.name + "、給料：" + this.salary + "、役員報酬：" + this.executiveCompensation + "\n";
+        builder.append(sectionChiefInfo);
+        
+        Iterator<Employee> iterator = this.subordinate.iterator();
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
-            employee.showEmployeeInfo();
+            builder.append("      " + employee.getEmployeeInfo());
         }
+        return builder.toString();
     }
 }

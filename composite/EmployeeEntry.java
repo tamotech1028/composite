@@ -1,6 +1,6 @@
 package composite;
 
+// 全ての社員に共通するインターフェース
 public interface EmployeeEntry {
-
-    void showEmployeeInfo();
+    String getEmployeeInfo();
 }

@@ -22,22 +22,22 @@ public class Manager {
         subordinate.add(object);
     }
 
-    public void showEmployeeInfo() {
-        System.out.println(
-            "   役職：部長、氏名：" + this.name
-            + "、給料：" + this.salary
-            + "、役員報酬：" + this.executiveCompensation
-        );
+    public String getEmployeeInfo() {
+        StringBuilder builder = new StringBuilder();
+        String managerInfo = "役職：部長、氏名：" + this.name + "、給料：" + this.salary + "、役員報酬：" + this.executiveCompensation + "\n";
+        builder.append(managerInfo);
+
         Iterator<Object> iterator = this.subordinate.iterator();
         while (iterator.hasNext()) {
             Object obj = iterator.next();
             if (obj instanceof SectionChief sectionChief ) {
-                sectionChief.showEmployeeInfo();;
+                builder.append("    " + sectionChief.getEmployeeInfo());
             } else if (obj instanceof Employee employee) {
-                employee.showEmployeeInfo();
+                builder.append("    " + employee.getEmployeeInfo());
             } else {
                 System.out.println("存在しない役職の社員です。");
             }
         }
+        return builder.toString();
     }
 }

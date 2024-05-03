@@ -9,8 +9,7 @@ public class Employee {
         this.name = name;
         this.salary = salary;
     }
-
-    public void showEmployeeInfo() {
-        System.out.println("            役職：なし、氏名：" + this.name + "、給料：" + this.salary);
+    public String getEmployeeInfo() {
+        return "役職：なし、氏名：" + this.name + "、給料：" + this.salary + "\n";
     }
 }

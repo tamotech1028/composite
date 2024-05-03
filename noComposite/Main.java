@@ -32,19 +32,19 @@ public class Main {
         manager2.addSubordinate(sectionChief3);
         manager2.addSubordinate(sectionChief4);
 
-        sectionChief1.addMember(employee1);
-        sectionChief1.addMember(employee2);
-        sectionChief1.addMember(employee3);
+        sectionChief1.addSubordinate(employee1);
+        sectionChief1.addSubordinate(employee2);
+        sectionChief1.addSubordinate(employee3);
 
-        sectionChief2.addMember(employee4);
-        sectionChief2.addMember(employee5);
+        sectionChief2.addSubordinate(employee4);
+        sectionChief2.addSubordinate(employee5);
 
-        sectionChief3.addMember(employee6);
-        sectionChief3.addMember(employee7);
+        sectionChief3.addSubordinate(employee6);
+        sectionChief3.addSubordinate(employee7);
 
-        sectionChief4.addMember(employee8);
-        sectionChief4.addMember(employee9);
+        sectionChief4.addSubordinate(employee8);
+        sectionChief4.addSubordinate(employee9);
 
-        president.showEmployeeInfo();;
+        System.out.println(president.getEmployeeInfo());
     }
 }

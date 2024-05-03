@@ -23,15 +23,16 @@ public class President implements EmployeeEntry{
     }
 
     @Override
-    public void showEmployeeInfo() {
-        System.out.println(
-            "役職：社長、氏名：" + this.name
-            + "、給料：" + this.salary
-            + "、役員報酬：" + this.executiveCompensation
-        );
+    public String getEmployeeInfo() {
+        StringBuilder builder = new StringBuilder();
+        String presidentInfo = "役職：社長、氏名：" + this.name + "、給料：" + this.salary + "、役員報酬：" + this.executiveCompensation + "\n";
+        builder.append(presidentInfo);
+
         Iterator<EmployeeEntry> iterator = this.subordinate.iterator();
         while (iterator.hasNext()) {
-            iterator.next().showEmployeeInfo();
+            EmployeeEntry employee = iterator.next();
+            builder.append("  " + employee.getEmployeeInfo());
         }
+        return builder.toString();
     }
 }
